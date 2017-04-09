@@ -15,6 +15,9 @@
 //For the main website
 Route::get('/', 'ScrabbleController@scrabble');
 
+//For displaying the score
+Route::get('/calculate', 'ScrabbleController@calculate');
+
 //Debugging Purpose, local only
 if(config('app.env') == 'local') {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
