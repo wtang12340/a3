@@ -20,7 +20,7 @@ Route::get('/calculate', 'ScrabbleController@calculate');
 
 //Debugging Purpose, local only
 if(config('app.env') == 'local') {
-    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
     Route::get('/debugbar', function() {
 

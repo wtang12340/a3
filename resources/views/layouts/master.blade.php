@@ -16,20 +16,20 @@
 	</header>
     <form method='GET' action='/calculate'>
         <label for='word'>Your Word: </label>
-        <input type='text' name='word' id='word' value=''>
+        <input type='text' name='word' id='word' value='{{$word or ''}}'>
         <br>
         <br>
         <label> Bonus Points: </label>
         <br>
-        <input type='radio' name='bonus' value='none' checked> None
+        <input type='radio' name='bonus' value='none' {{ ($bonus =='none') ? 'checked' : ''}} checked> None
         <br>
-        <input type='radio' name='bonus' value='double'> Double Word Score
+        <input type='radio' name='bonus' value='double' {{ ($bonus =='double') ? 'checked' : ''}}> Double Word Score
         <br>
-        <input type='radio' name='bonus' value='triple'> Triple Word Score
+        <input type='radio' name='bonus' value='triple' {{ ($bonus =='triple') ? 'checked' : ''}}> Triple Word Score
         <br>
         <br>
         <label for='bingo'>Include 50 point bingo? </label>
-        <input type='checkbox' name='bingo' value='false' id='bingo'>
+        <input type='checkbox' name='bingo' value='true' id='bingo' {{ ($bingo) ? 'checked' : ''}}>
         <br>
         <br>
         <input type='submit' class='button' value='Calculate'>

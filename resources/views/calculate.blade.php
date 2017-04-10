@@ -8,5 +8,5 @@
 @endpush
 
 @section('footer')
-	<p>Your Word Score is: </p>
+	<p>Your Word Score is: {{$score}}</p>
 @endsection
