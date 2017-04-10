@@ -16,7 +16,14 @@
 	</header>
     <form method='GET' action='/calculate'>
         <label for='word'>Your Word: </label>
-        <input type='text' name='word' id='word' value='{{$word or ''}}'>
+        <input type='text' name='word' id='word' value='@if($errors->get('word')){{old('word')}}@else{{$word or ''}}@endif'>
+        @if($errors->get('word'))
+            <ul>
+                @foreach($errors->get('word') as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
         <br>
         <br>
         <label> Bonus Points: </label>

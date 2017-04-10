@@ -19,11 +19,15 @@ class ScrabbleController extends Controller
     //Home page with both form and the score from previous submission, all inputs are saved
     public function calculate(Request $request){
 
+        //Validate the word, scrabble words only has up to 15 characters
+        $this->validate($request, [
+            'word' => 'required|alpha|max:15',
+        ]);
         //Initialize score
         $score = 0;
 
         //Pull the request
-        $word = $request->input('word', null);
+        $word = strtolower($request->input('word', null));
         $bonus = $request->input('bonus','none');
         $bingo = $request->input('bingo', false);
 

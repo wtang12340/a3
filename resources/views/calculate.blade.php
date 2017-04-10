@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-
 @push('head')
 @endpush
 
@@ -8,5 +7,5 @@
 @endpush
 
 @section('footer')
-	<p>Your Word Score is: {{$score}}</p>
+	<p>Your Word Score is: @if(count($errors) > 0)@else{{$score}}@endif</p>
 @endsection
